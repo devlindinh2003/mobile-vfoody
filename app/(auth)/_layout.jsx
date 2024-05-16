@@ -6,7 +6,7 @@ const AuthLayout = () => {
     <>
       <Stack
         screenOptions={{
-          // Hide the header for all other routes.
+          // Hide the header for all other routes.asdfa
           headerShown: false,
         }}
             >
