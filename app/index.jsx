@@ -54,7 +54,7 @@ export default function StartPage() {
             width: "100%",
           }}
           labelStyle={{
-            fontFamily: "Poppins-Medium",
+            fontFamily: "HeadingNow-64Regular",
             fontSize: 24,
             lineHeight: 27,
           }}
@@ -101,12 +101,6 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
-  },
-  text: {
-    color: Colors.btnText,
-    fontSize: 24,
-    fontWeight: "bold",
-    marginLeft: 115,
   },
   logo: {
     width: 140,

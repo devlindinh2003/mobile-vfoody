@@ -12,6 +12,15 @@ const RootLayout = () => {
     "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
     "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
     "Poppins-Thin": require("../assets/fonts/Poppins-Thin.ttf"),
+    "HeadingNow-21Thin": require("../assets/fonts/HeadingNow-21Thin.otf"),
+    "HeadingNow-22Light": require("../assets/fonts/HeadingNow-22Light.otf"),
+    "HeadingNow-23Book": require("../assets/fonts/HeadingNow-23Book.otf"),
+    "HeadingNow-55Medium": require("../assets/fonts/HeadingNow-55Medium.otf"),
+    "HeadingNow-61Thin": require("../assets/fonts/HeadingNow-61Thin.otf"),
+    "HeadingNow-62Light": require("../assets/fonts/HeadingNow-62Light.otf"),
+    "HeadingNow-63Book": require("../assets/fonts/HeadingNow-63Book.otf"),
+    "HeadingNow-64Regular": require("../assets/fonts/HeadingNow-64Regular.otf"),
+    "HeadingNow-65Medium": require("../assets/fonts/HeadingNow-65Medium.otf"),
   });
   useEffect(() => {
     if (error) throw error;
