@@ -37,11 +37,7 @@ export default function StartPage() {
       />
       <FadeInView style={styles.animation}>
         <View style={styles.main}>
-          <Image
-            style={styles.logo}
-            resizeMode="contain"
-            source={Icons.IconLight}
-          />
+          <Image style={styles.logo} resizeMode="contain" source={Icons.IconLight} />
           <Text style={styles.title}>VFoody</Text>
         </View>
         <Button
@@ -79,7 +75,7 @@ const styles = StyleSheet.create({
   },
   main: {
     alignItems: 'center',
-    marginBottom: 120
+    marginBottom: 120,
   },
   title: {
     fontSize: 30,

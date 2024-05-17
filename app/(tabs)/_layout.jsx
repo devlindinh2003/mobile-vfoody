@@ -1,7 +1,4 @@
-
-import { Redirect, Tabs } from "expo-router";
-
-
+import { Redirect, Tabs } from 'expo-router';
 
 const TabLayout = () => {
   const { loading, isLogged } = useGlobalContext();
@@ -12,13 +9,13 @@ const TabLayout = () => {
     <>
       <Tabs
         screenOptions={{
-          tabBarActiveTintColor: "#FFA001",
-          tabBarInactiveTintColor: "#CDCDE0",
+          tabBarActiveTintColor: '#FFA001',
+          tabBarInactiveTintColor: '#CDCDE0',
           tabBarShowLabel: false,
           tabBarStyle: {
-            backgroundColor: "#161622",
+            backgroundColor: '#161622',
             borderTopWidth: 1,
-            borderTopColor: "#232533",
+            borderTopColor: '#232533',
             height: 84,
           },
         }}
@@ -26,12 +23,11 @@ const TabLayout = () => {
         <Tabs.Screen
           name="home"
           options={{
-            title: "Home",
+            title: 'Home',
             headerShown: false,
           }}
         />
       </Tabs>
-
     </>
   );
 };

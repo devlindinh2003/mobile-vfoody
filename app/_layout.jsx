@@ -1,26 +1,26 @@
-import { useFonts } from "expo-font";
-import { SplashScreen, Stack } from "expo-router";
-import { useEffect } from "react";
+import { useFonts } from 'expo-font';
+import { SplashScreen, Stack } from 'expo-router';
+import { useEffect } from 'react';
 const RootLayout = () => {
   const [fontsLoaded, error] = useFonts({
-    "Poppins-Black": require("../assets/fonts/Poppins-Black.ttf"),
-    "Poppins-Bold": require("../assets/fonts/Poppins-Bold.ttf"),
-    "Poppins-ExtraBold": require("../assets/fonts/Poppins-ExtraBold.ttf"),
-    "Poppins-ExtraLight": require("../assets/fonts/Poppins-ExtraLight.ttf"),
-    "Poppins-Light": require("../assets/fonts/Poppins-Light.ttf"),
-    "Poppins-Medium": require("../assets/fonts/Poppins-Medium.ttf"),
-    "Poppins-Regular": require("../assets/fonts/Poppins-Regular.ttf"),
-    "Poppins-SemiBold": require("../assets/fonts/Poppins-SemiBold.ttf"),
-    "Poppins-Thin": require("../assets/fonts/Poppins-Thin.ttf"),
-    "HeadingNow-21Thin": require("../assets/fonts/HeadingNow-21Thin.otf"),
-    "HeadingNow-22Light": require("../assets/fonts/HeadingNow-22Light.otf"),
-    "HeadingNow-23Book": require("../assets/fonts/HeadingNow-23Book.otf"),
-    "HeadingNow-55Medium": require("../assets/fonts/HeadingNow-55Medium.otf"),
-    "HeadingNow-61Thin": require("../assets/fonts/HeadingNow-61Thin.otf"),
-    "HeadingNow-62Light": require("../assets/fonts/HeadingNow-62Light.otf"),
-    "HeadingNow-63Book": require("../assets/fonts/HeadingNow-63Book.otf"),
-    "HeadingNow-64Regular": require("../assets/fonts/HeadingNow-64Regular.otf"),
-    "HeadingNow-65Medium": require("../assets/fonts/HeadingNow-65Medium.otf"),
+    'Poppins-Black': require('../assets/fonts/Poppins-Black.ttf'),
+    'Poppins-Bold': require('../assets/fonts/Poppins-Bold.ttf'),
+    'Poppins-ExtraBold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
+    'Poppins-ExtraLight': require('../assets/fonts/Poppins-ExtraLight.ttf'),
+    'Poppins-Light': require('../assets/fonts/Poppins-Light.ttf'),
+    'Poppins-Medium': require('../assets/fonts/Poppins-Medium.ttf'),
+    'Poppins-Regular': require('../assets/fonts/Poppins-Regular.ttf'),
+    'Poppins-SemiBold': require('../assets/fonts/Poppins-SemiBold.ttf'),
+    'Poppins-Thin': require('../assets/fonts/Poppins-Thin.ttf'),
+    'HeadingNow-21Thin': require('../assets/fonts/HeadingNow-21Thin.otf'),
+    'HeadingNow-22Light': require('../assets/fonts/HeadingNow-22Light.otf'),
+    'HeadingNow-23Book': require('../assets/fonts/HeadingNow-23Book.otf'),
+    'HeadingNow-55Medium': require('../assets/fonts/HeadingNow-55Medium.otf'),
+    'HeadingNow-61Thin': require('../assets/fonts/HeadingNow-61Thin.otf'),
+    'HeadingNow-62Light': require('../assets/fonts/HeadingNow-62Light.otf'),
+    'HeadingNow-63Book': require('../assets/fonts/HeadingNow-63Book.otf'),
+    'HeadingNow-64Regular': require('../assets/fonts/HeadingNow-64Regular.otf'),
+    'HeadingNow-65Medium': require('../assets/fonts/HeadingNow-65Medium.otf'),
   });
   useEffect(() => {
     if (error) throw error;
@@ -38,11 +38,11 @@ const RootLayout = () => {
     return null;
   }
   return (
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="(auth)" options={{ headerShown: false }} />
-        <Stack.Screen name="(tabs)" options={{ headerShown: false}} />
-      </Stack>
+    <Stack>
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    </Stack>
   );
 };
 
