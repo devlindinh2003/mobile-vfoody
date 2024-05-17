@@ -9,5 +9,5 @@ export default {
   commonBtnBackground: '#DF4830',
   commonBtnText: '#FFFFFF',
   btnBackground: '#FFFFFF',
-  btnText: '#DF4830'
-}
+  btnText: '#DF4830',
+};

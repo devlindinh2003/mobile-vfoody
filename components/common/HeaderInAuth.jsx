@@ -1,8 +1,8 @@
-import { router } from "expo-router";
-import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
-import { Button } from "react-native-paper";
-import { Colors, Icons } from "../../constant";
+import { router } from 'expo-router';
+import React from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { Button } from 'react-native-paper';
+import { Colors, Icons } from '../../constant';
 const HeaderInAuth = ({ activePage }) => {
   return (
     <View
@@ -13,57 +13,49 @@ const HeaderInAuth = ({ activePage }) => {
         <Image source={Icons.IconLight} />
       </View>
       <View className="flex-row justify-between w-full gap-5 pr-4  pl-4">
-        <View
-          className={`${
-            activePage === "signIn" ? "border-b-2 border-b-white" : ""
-          } w-[40%]`}
-        >
+        <View className={`${activePage === 'signIn' ? 'border-b-2 border-b-white' : ''} w-[40%]`}>
           <Button
             mode="text"
             textColor={Colors.commonBtnText}
             theme={{ roundness: 0 }}
             contentStyle={{
               paddingVertical: 8,
-              width: "90%",
+              width: '90%',
             }}
             labelStyle={{
-              fontFamily: "Poppins-SemiBold",
+              fontFamily: 'Poppins-SemiBold',
               fontSize: 16,
               lineHeight: 18,
             }}
             onPress={() => {
-              if (activePage === "signIn") {
+              if (activePage === 'signIn') {
                 return;
               }
-              router.push("/sign-in");
+              router.push('/sign-in');
             }}
           >
             <Text>Đăng nhập</Text>
           </Button>
         </View>
-        <View
-          className={`${
-            activePage === "signUp" ? "border-b-2 border-b-white" : ""
-          } w-[40%]`}
-        >
+        <View className={`${activePage === 'signUp' ? 'border-b-2 border-b-white' : ''} w-[40%]`}>
           <Button
             mode="text"
             textColor={Colors.commonBtnText}
             theme={{ roundness: 0 }}
             contentStyle={{
               paddingVertical: 8,
-              width: "90%",
+              width: '90%',
             }}
             labelStyle={{
-              fontFamily: "Poppins-SemiBold",
+              fontFamily: 'Poppins-SemiBold',
               fontSize: 16,
               lineHeight: 18,
             }}
             onPress={() => {
-              if (activePage === "signUp") {
+              if (activePage === 'signUp') {
                 return;
               }
-              router.push("/sign-up");
+              router.push('/sign-up');
             }}
           >
             <Text>Đăng ký</Text>
@@ -77,7 +69,7 @@ const HeaderInAuth = ({ activePage }) => {
 export default HeaderInAuth;
 const styles = StyleSheet.create({
   shadow: {
-    shadowColor: "#302f2f",
+    shadowColor: '#302f2f',
     shadowOffset: {
       width: 4,
       height: 9,
