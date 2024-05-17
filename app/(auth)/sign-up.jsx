@@ -104,12 +104,12 @@ const SignUp = () => {
                   right={
                     !isShowPassword ? (
                       <TextInput.Icon
-                        icon="eye"
+                        icon="eye-off"
                         onPress={(state) => setIsShownPassword(true)}
                       />
                     ) : (
                       <TextInput.Icon
-                        icon="eye-off"
+                        icon="eye"
                         onPress={(state) => setIsShownPassword(false)}
                       />
                     )
