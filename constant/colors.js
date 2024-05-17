@@ -4,6 +4,7 @@ export default {
   primaryTextColor: '#F6F7F8',
   secondaryTextColor: '#323643',
   tertiaryTextColor: '#9EA1B1',
+  activeTabColor: "#ffee00ff",
 
   // button color:
   commonBtnBackground: '#DF4830',

@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { Formik } from "formik";
 import React, { useState } from "react";
 import { Image, Keyboard, ScrollView, StyleSheet, View } from "react-native";
@@ -33,6 +34,7 @@ const SignIn = () => {
           initialValues={{ phoneNumber: "", password: "" }}
           onSubmit={(values) => {
             // Handle login logic here
+            router.push("/homes")
             console.log(values);
           }}
           validationSchema={validationSchema}

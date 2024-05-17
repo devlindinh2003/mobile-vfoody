@@ -1,9 +1,10 @@
 import { router } from "expo-router";
-import React from "react";
+import React, { useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { Button } from "react-native-paper";
 import { Colors, Icons } from "../../constant";
-const HeaderInAuth = ({ activePage }) => {
+const HeaderInAuth = ({ }) => {
+  const [activePage, setActivePage] = useState("signIn")
   return (
     <View
       className="bg-primary h-[35%] rounded-b-3xl flex-col justify-end items-center space-10"
@@ -35,6 +36,7 @@ const HeaderInAuth = ({ activePage }) => {
               if (activePage === "signIn") {
                 return;
               }
+              setActivePage("signIn");
               router.push("/sign-in");
             }}
           >
@@ -63,7 +65,8 @@ const HeaderInAuth = ({ activePage }) => {
               if (activePage === "signUp") {
                 return;
               }
-              router.push("/sign-up");
+              setActivePage("signUp")
+              router.push("/sign-in/sign-up");
             }}
           >
             <Text>Đăng ký</Text>
