@@ -10,6 +10,12 @@ module.exports = {
           100: '#F6F7F8',
           200: '#F2F3F5',
         },
+        shadow: {
+          DEFAULT: '#df473093',
+          100: '#df473071',
+          200: '#df473044',
+          300: '#df473025',
+        },
         tertiary: '#9EA1B1',
         text: {
           DEFAULT: '#323643',

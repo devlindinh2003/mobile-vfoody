@@ -25,7 +25,7 @@ const index = () => {
       initialValues={{ phoneNumber: "", password: "" }}
       onSubmit={(values) => {
         // Handle login logic here
-        router.push("/homes");
+        router.push("/home");
         console.log(values);
       }}
       validationSchema={validationSchema}

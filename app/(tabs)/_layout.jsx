@@ -1,5 +1,6 @@
+import { Ionicons, MaterialCommunityIcons, Octicons } from "@expo/vector-icons";
 import { Tabs, router } from "expo-router";
-import { Bell, Heart, ReceiptText, ShoppingCart, Store } from "lucide-react-native";
+import { View } from 'react-native';
 import { TouchableRipple } from "react-native-paper";
 import { Colors } from "../../constant";
 // const TabIcon = ({ icon, color, name, focused, iconName }) => {
@@ -25,7 +26,10 @@ const TabIcon = ({ icon, color, name, focused, iconName }) => {
       rippleColor="rgba(80, 80, 80, 0.075)"
       borderless={true}
     >
+    <View className="">
+    
       {iconName}
+    </View>
     </TouchableRipple>
   );
 };
@@ -42,20 +46,20 @@ const TabLayout = () => {
             backgroundColor: Colors.primaryBackgroundColor,
             borderTopWidth: 1,
             // height: 100,
-            // paddingTop: 30,
-            // paddingBottom: 30,
+            // paddingTop: 10,
+            // paddingBottom: 10,
           },
         }}
       >
         <Tabs.Screen
-          name="homes"
+          name="home"
           options={{
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
                 color={color}
-                name="homes"
-                iconName={<Store size={24} color={focused ? Colors.activeTabColor : Colors.commonBtnText} strokeWidth={2} />}
+                name="home"
+                iconName={<Ionicons name="storefront" size={20} color={focused ? Colors.activeTabColor : Colors.commonBtnText} />}
                 focused={focused}
               />
             ),
@@ -69,7 +73,7 @@ const TabLayout = () => {
               <TabIcon
                 color={color}
                 name="order"
-                iconName={<ReceiptText size={24} color={focused ? Colors.activeTabColor : Colors.commonBtnText} strokeWidth={2} />}
+                iconName={<Ionicons name="newspaper" size={20} color={focused ? Colors.activeTabColor : Colors.commonBtnText} />}
                 focused={focused}
               />
             ),
@@ -78,13 +82,13 @@ const TabLayout = () => {
         <Tabs.Screen
           name="cart"
           options={{
-            title: "Home",
+            title: 'Home',
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
                 color={color}
                 name="cart"
-                iconName={<ShoppingCart size={24} color={focused ? Colors.activeTabColor : Colors.commonBtnText} strokeWidth={2} />}
+                iconName={<MaterialCommunityIcons name="shopping" size={20} color={focused ? Colors.activeTabColor : Colors.commonBtnText} />}
                 focused={focused}
               />
             ),
@@ -98,7 +102,7 @@ const TabLayout = () => {
               <TabIcon
                 color={color}
                 name="notify"
-                iconName={<Bell size={24} color={focused ? Colors.activeTabColor : Colors.commonBtnText} strokeWidth={2} />}
+                iconName={<Ionicons name="heart" size={20} color={focused ? Colors.activeTabColor : Colors.commonBtnText}/>}
                 focused={focused}
               />
             ),
@@ -112,7 +116,7 @@ const TabLayout = () => {
               <TabIcon
                 color={color}
                 name="like"
-                iconName={<Heart size={24} color={focused ? Colors.activeTabColor : Colors.commonBtnText} strokeWidth={2.5} />}
+                iconName={<Octicons name="bell-fill" size={20} color={focused ? Colors.activeTabColor : Colors.commonBtnText} />}
                 focused={focused}
               />
             ),

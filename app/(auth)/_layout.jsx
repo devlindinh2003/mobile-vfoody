@@ -1,5 +1,5 @@
-import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
+import { Stack } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 
 const AuthLayout = () => {
   return (
@@ -9,7 +9,7 @@ const AuthLayout = () => {
           headerShown: false,
           
         }}
-            >
+      >
         <Stack.Screen
           name="sign-in"
           options={{

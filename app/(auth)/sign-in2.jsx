@@ -10,14 +10,14 @@ import { Colors, Images } from "../../constant";
 const validationSchema = yup.object().shape({
   phoneNumber: yup
     .string()
-    .min(8, "Phone number must be at least 8 characters")
-    .max(11, "Phone number must be at most 11 characters")
-    .required("Phone number is required"),
+    .min(8, 'Phone number must be at least 8 characters')
+    .max(11, 'Phone number must be at most 11 characters')
+    .required('Phone number is required'),
   password: yup
     .string()
-    .min(8, "Password must be at least 8 characters")
-    .max(25, "Password must be at most 25 characters")
-    .required("Password is required"),
+    .min(8, 'Password must be at least 8 characters')
+    .max(25, 'Password must be at most 25 characters')
+    .required('Password is required'),
 });
 const SignIn = () => {
   const [isShowPassword, setIsShownPassword] = useState(false);
@@ -29,9 +29,9 @@ const SignIn = () => {
           resizeMode="stretch"
           source={Images.LogoCoverDark}
         />
-        <HeaderInAuth activePage={"signIn"}/>
+        <HeaderInAuth activePage={'signIn'} />
         <Formik
-          initialValues={{ phoneNumber: "", password: "" }}
+          initialValues={{ phoneNumber: '', password: '' }}
           onSubmit={(values) => {
             // Handle login logic here
             router.push("/homes")
@@ -39,63 +39,47 @@ const SignIn = () => {
           }}
           validationSchema={validationSchema}
         >
-          {({
-            handleChange,
-            handleBlur,
-            handleSubmit,
-            values,
-            errors,
-            touched,
-          }) => (
+          {({ handleChange, handleBlur, handleSubmit, values, errors, touched }) => (
             <View className="flex gap-10 mt-10 items-center">
               <View className="w-full flex-1 items-center">
                 <TextInput
-                  style={{ backgroundColor: "transparent", width: "80%" }}
+                  style={{ backgroundColor: 'transparent', width: '80%' }}
                   type="flat"
-                  onBlur={handleBlur("phoneNumber")}
+                  onBlur={handleBlur('phoneNumber')}
                   value={values.phoneNumber}
-                  onChangeText={handleChange("phoneNumber")}
+                  onChangeText={handleChange('phoneNumber')}
                   keyboardType="phone-pad"
                   placeholder="Phone Number"
                   onSubmitEditing={Keyboard.dismiss}
                 />
                 <View className="w-[80%]">
-                  <HelperText
-                    type="error"
-                    visible={touched.phoneNumber && errors.phoneNumber}
-                  >
-                    {errors.phoneNumber}{" "}
+                  <HelperText type="error" visible={touched.phoneNumber && errors.phoneNumber}>
+                    {errors.phoneNumber}{' '}
                   </HelperText>
                 </View>
               </View>
               <View className="w-full flex-1 items-center">
                 <TextInput
-                  style={{ backgroundColor: "transparent", width: "80%" }}
+                  style={{ backgroundColor: 'transparent', width: '80%' }}
                   type="flat"
-                  onChangeText={handleChange("password")}
-                  onBlur={handleBlur("password")}
+                  onChangeText={handleChange('password')}
+                  onBlur={handleBlur('password')}
                   value={values.password}
                   secureTextEntry={!isShowPassword}
                   right={
                     !isShowPassword ? (
                       <TextInput.Icon
-                        icon="eye"
+                        icon="eye-off"
                         onPress={(state) => setIsShownPassword(true)}
                       />
                     ) : (
-                      <TextInput.Icon
-                        icon="eye-off"
-                        onPress={(state) => setIsShownPassword(false)}
-                      />
+                      <TextInput.Icon icon="eye" onPress={(state) => setIsShownPassword(false)} />
                     )
                   }
                   placeholder="Password"
                 />
                 <View className="w-[80%]">
-                  <HelperText
-                    type="error"
-                    visible={touched.password && errors.password}
-                  >
+                  <HelperText type="error" visible={touched.password && errors.password}>
                     {errors.password}
                   </HelperText>
                 </View>
@@ -108,7 +92,7 @@ const SignIn = () => {
                   paddingVertical: 8,
                 }}
                 labelStyle={{
-                  fontFamily: "Poppins-SemiBold",
+                  fontFamily: 'Poppins-SemiBold',
                   fontSize: 16,
                   lineHeight: 19,
                 }}
@@ -121,13 +105,13 @@ const SignIn = () => {
                 buttonColor={Colors.primaryBackgroundColor}
                 textColor={Colors.commonBtnText}
                 mode="elevated"
-                style={{ width: "80%" }}
+                style={{ width: '80%' }}
                 theme={{ roundness: 4 }}
                 contentStyle={{
                   paddingVertical: 8,
                 }}
                 labelStyle={{
-                  fontFamily: "Poppins-Bold",
+                  fontFamily: 'Poppins-Bold',
                   fontSize: 20,
                   lineHeight: 22,
                 }}
