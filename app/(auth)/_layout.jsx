@@ -6,8 +6,8 @@ const AuthLayout = () => {
     <>
       <Stack
         screenOptions={{
-          // Hide the header for all other routes.
           headerShown: false,
+          
         }}
       >
         <Stack.Screen
@@ -16,12 +16,15 @@ const AuthLayout = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen
-          name="sign-up"
-          options={{
-            headerShown: false,
-          }}
-        />
+      {
+  // <Stack.Screen
+  //         name="sign-in/sign-up"
+  //         options={{
+  //           headerShown: false,
+  //         }}
+  //       />       
+      }  
+       
       </Stack>
       <StatusBar />
     </>

@@ -1,9 +1,10 @@
-import { router } from 'expo-router';
-import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { Button } from 'react-native-paper';
-import { Colors, Icons } from '../../constant';
-const HeaderInAuth = ({ activePage }) => {
+import { router } from "expo-router";
+import React, { useState } from "react";
+import { Image, StyleSheet, Text, View } from "react-native";
+import { Button } from "react-native-paper";
+import { Colors, Icons } from "../../constant";
+const HeaderInAuth = ({ }) => {
+  const [activePage, setActivePage] = useState("signIn")
   return (
     <View
       className="bg-primary h-[35%] rounded-b-3xl flex-col justify-end items-center space-10"
@@ -17,7 +18,9 @@ const HeaderInAuth = ({ activePage }) => {
           <Button
             mode="text"
             textColor={Colors.commonBtnText}
-            theme={{ roundness: 0 }}
+            theme={{ roundness: 
+              
+              0 }}
             contentStyle={{
               paddingVertical: 8,
               width: '90%',
@@ -31,7 +34,8 @@ const HeaderInAuth = ({ activePage }) => {
               if (activePage === 'signIn') {
                 return;
               }
-              router.push('/sign-in');
+              setActivePage("signIn");
+              router.push("/sign-in");
             }}
           >
             <Text>Đăng nhập</Text>
@@ -55,7 +59,8 @@ const HeaderInAuth = ({ activePage }) => {
               if (activePage === 'signUp') {
                 return;
               }
-              router.push('/sign-up');
+              setActivePage("signUp")
+              router.push("/sign-in/sign-up");
             }}
           >
             <Text>Đăng ký</Text>

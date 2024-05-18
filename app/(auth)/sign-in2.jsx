@@ -1,10 +1,11 @@
-import { Formik } from 'formik';
-import React, { useState } from 'react';
-import { Image, Keyboard, ScrollView, StyleSheet, View } from 'react-native';
-import { Button, HelperText, TextInput } from 'react-native-paper';
-import * as yup from 'yup';
-import HeaderInAuth from '../../components/common/HeaderInAuth';
-import { Colors, Images } from '../../constant';
+import { router } from "expo-router";
+import { Formik } from "formik";
+import React, { useState } from "react";
+import { Image, Keyboard, ScrollView, StyleSheet, View } from "react-native";
+import { Button, HelperText, TextInput } from "react-native-paper";
+import * as yup from "yup";
+import HeaderInAuth from "../../components/common/HeaderInAuth";
+import { Colors, Images } from "../../constant";
 
 const validationSchema = yup.object().shape({
   phoneNumber: yup
@@ -33,6 +34,7 @@ const SignIn = () => {
           initialValues={{ phoneNumber: '', password: '' }}
           onSubmit={(values) => {
             // Handle login logic here
+            router.push("/homes")
             console.log(values);
           }}
           validationSchema={validationSchema}
