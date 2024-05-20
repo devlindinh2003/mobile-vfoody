@@ -7,7 +7,7 @@ const AuthLayout = () => {
       <Stack
         screenOptions={{
           headerShown: false,
-          
+         animation: "fade_from_bottom" 
         }}
       >
         <Stack.Screen

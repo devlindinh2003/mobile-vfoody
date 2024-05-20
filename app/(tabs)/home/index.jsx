@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
+import ItemBestSellerInHome from '../../../components/user-page/ItemBestSellerInHome';
+import ItemShopRegulerInHome from '../../../components/user-page/ItemShopRegulerInHome';
 import { Colors } from '../../../constant';
 const Index = () => {
   const styles = StyleSheet.create({
@@ -27,7 +29,7 @@ const Index = () => {
   return (
     <>
       <View className="flex-1">
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} >
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View className="flex-row  gap-5 p-5  pl-7">
             {DATA.map((item, index) => (
               <TouchableRipple
@@ -71,19 +73,61 @@ const Index = () => {
         </ScrollView>
       </View>
       <View className="pl-7">
-        <Text className="font-hnow65medium text-xl">Đặt hàng ngay!!!</Text>
+        <Text className="font-hnow65medium text-xl text-primary">Bán chạy nhất</Text>
       </View>
-      <View className="flex-1 bg-black-100 ">
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} >
+      <View className="flex-1 ">
+        <View className="flex-row  pl-7 mt-2  ">
+          <FlatList
+            horizontal
+            data={data3}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item }) => <ItemBestSellerInHome item={item} />}
+          />
+        </View>
+      </View>
+      <View className="pl-7">
+        <Text className="font-hnow65medium text-xl text-primary">Đặt lại quán quen</Text>
+      </View>
+      <View className="flex-1 ">
+          <View className="flex-row  pl-7 mt-2  ">
+            <FlatList
+              horizontal
+              data={Data2}
+              showsHorizontalScrollIndicator={false}
+              renderItem={({ item }) => <ItemShopRegulerInHome item={item} />}
+            />
+          </View>
+      </View>
+      <View className="pl-7">
+        <Text className="font-hnow65medium text-xl text-primary">Đặt hàng ngay!!!</Text>
+      </View>
+      <View className="flex-1 ">
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} className="flex-1">
           <View className="flex-row  pl-7 mt-2  ">
             {Data2.map((item, index) => (
-              <View key={item.id} className={`flex justify-start items-center bg-white w-60 rounded-2xl mr-5 `}>
-                <Text>asdfasdfasdfasdf</Text>
-                <Text> sadfasdfsadfasfasf</Text>
-                <Image
-                  source={require('../../../assets/images/tiny_logo.png')}
-                  className="w-[100%] h-full"
-                />
+              <View
+                key={item.id}
+                className={`flex justify-start items-center bg-white w-[270] rounded-2xl  mr-5 mb-10`}
+                style={styles.shadow}
+              >
+                <View className="w-full h-[170] bg-black-100 flex-1 overflow-hidden rounded-t-2xl">
+                  <Image
+                    source={{
+                      uri: item.image,
+                    }}
+                    resizeMode="cover"
+                    className="w-full h-full"
+                  />
+                </View>
+                <View className="p-3 items-start w-full">
+                  <Text className="text-sm font-hnow65medium">{item.t}</Text>
+                  <View className="flex-row gap-2">
+                    <Text className="text-xs text-gray-500 font-hnow65medium">Ad</Text>
+                    <Text style className="text-xs text-gray-400 font-hnow64regular">
+                      {item.Ad}
+                    </Text>
+                  </View>
+                </View>
               </View>
             ))}
           </View>
@@ -93,19 +137,40 @@ const Index = () => {
   );
 };
 export default Index;
-
+const data3 = [
+  {
+    id: 1,
+  },
+  {
+    id: 2,
+  },
+  {
+    id: 3,
+  },
+  {
+    id: 4,
+  },
+  {
+    id: 5,
+  },
+  {
+    id: 6,
+  },
+];
 const Data2 = [
   {
     id: 1,
     t: 'Quán ngon giá hời',
     Ad: 'Cheese Food House',
-    image: 'https://th.bing.com/th/id/OIP.69qmBVlbeTJPmMdJlr2ixAAAAA?rs=1&pid=ImgDetMain',
+    image:
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/38da7d105303523.5f75e3e4e4fd7.jpg',
   },
   {
     id: 21,
     t: 'Quán ngon giá hời',
     Ad: 'Cheese Food House',
-    image: 'https://th.bing.com/th/id/OIP.69qmBVlbeTJPmMdJlr2ixAAAAA?rs=1&pid=ImgDetMain',
+    image:
+      'https://res.cloudinary.com/lush-banners/image/upload/v1570824624/lushbanners/blogs/restaurant-teardrop-banners.jpg',
   },
 ];
 const DATA = [

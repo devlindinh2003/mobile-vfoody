@@ -10,6 +10,9 @@ module.exports = {
           100: '#F6F7F8',
           200: '#F2F3F5',
         },
+        glass: {
+          DEFAULT: "#ffffffab",
+        },
         shadow: {
           DEFAULT: '#df473093',
           100: '#df473071',
