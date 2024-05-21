@@ -1,17 +1,25 @@
 import { AntDesign } from '@expo/vector-icons';
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { Dimensions, Image, Text, View } from 'react-native';
 import { Avatar } from 'react-native-paper';
 import { Colors } from '../../constant';
 
-const ItemInGridSearch = ({item}) => {
-  console.log(item)
+const ItemInGridSearch = ({ item }) => {
+  const { width, height } = Dimensions.get('window');
+  console.log(item);
+  const widthItem = parseInt((width * 26 / 100));
+  console.log(widthItem);
   return (
     <View
       key={item.id}
-      className={`flex justify-start items-center bg-transparent w-[100] rounded-2xl  mr-5 mb-10`}
+      className={`flex justify-start items-center bg-transparent  rounded-2xl  mr-5 mb-10`}
+      style={{
+        width: widthItem
+      }}
     >
-      <View className="w-full h-[100] bg-black-100 flex-1 overflow-hidden rounded-2xl ">
+      <View className={`w-full bg-black-100 flex-1 overflow-hidden rounded-2xl `} style={{
+        height: widthItem
+      }}>
         <View className="absolute top-2 left-2 bg-glass flex-row rounded-full p-1 z-[1] items-center">
           <Text className="font-hnow64regular" style={{ fontSize: 10 }}>
             4.5

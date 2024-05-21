@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import { Colors } from '../../constant';
 const styles = StyleSheet.create({
   shadow: {
@@ -13,9 +13,21 @@ const styles = StyleSheet.create({
 });
 
 const ItemBodyInSearchList = ({ item }) => {
+  const { width, height } = Dimensions.get('window');
+  console.log(item);
+  const widthItem = parseInt((width * 23) / 100);
   return (
-    <View className="flex w-[90] flex-1 overflow-visible">
-      <View className="w-[90] h-[90] rounded-lg " style={styles.shadow}>
+    <View
+      className="flex flex-1 overflow-visible"
+      style={{
+        width: widthItem,
+      }}
+    >
+      <View className="rounded-lg " style={{
+        ...styles.shadow,
+        width: widthItem,
+        height: widthItem
+      }}>
         <Image source={{ uri: item.image }} className="w-full h-full rounded-lg" />
       </View>
       <View>

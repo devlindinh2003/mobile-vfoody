@@ -27,6 +27,7 @@ const FilterBarinSearchList = () => {
         flexDirection: 'row',
         alignItems: 'center',
         width: '100%',
+        gap: 10
       }}
       className="justify-start"
     >
