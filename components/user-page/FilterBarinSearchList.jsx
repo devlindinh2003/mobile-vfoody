@@ -27,7 +27,6 @@ const FilterBarinSearchList = () => {
         flexDirection: 'row',
         alignItems: 'center',
         width: '100%',
-        gap: 10
       }}
       className="justify-start"
     >
@@ -39,16 +38,33 @@ const FilterBarinSearchList = () => {
           open={open}
           style={{
             borderColor: Colors.primaryBackgroundColor,
+            minHeight: 20,
+            width: 120,
+            borderTopRightRadius: 0,
+            borderBottomRightRadius: 0
+          }}
+          containerStyle={{
+          }}
+          labelStyle={{
+            fontSize: 10,
           }}
           className="w-[160] border-primary"
           categorySelectable={true}
-          placeholderStyle={{ color: 'grey' }}
+          placeholderStyle={{ color: 'grey'}}
+      
           dropDownContainerStyle={{
             backgroundColor: 'white',
             zIndex: 1001,
             elevation: 1001,
-            width: 160,
+            width: 120,
+            minHeight: 30,
+            paddingHorizontal: 1,
+            fontSize: 10,
             borderColor: Colors.primaryBackgroundColor,
+          }}
+          
+          textStyle={{
+            fontSize: 10,
           }}
           value={value}
           items={items}
@@ -66,6 +82,13 @@ const FilterBarinSearchList = () => {
           open={openSort}
           style={{
             borderColor: Colors.primaryBackgroundColor,
+            minHeight: 25,
+              borderTopLeftRadius: 0,
+            borderBottomLeftRadius: 0
+
+          }}
+          textStyle={{
+            fontSize: 10,
           }}
           className="w-[100] border-primary"
           categorySelectable={true}

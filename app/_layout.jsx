@@ -1,6 +1,8 @@
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
+import { Provider } from 'redux';
+import { store } from '../redux/store';
 const RootLayout = () => {
   const [fontsLoaded, error] = useFonts({
     'Poppins-Black': require('../assets/fonts/Poppins-Black.ttf'),
@@ -38,6 +40,8 @@ const RootLayout = () => {
     return null;
   }
   return (
+    
+    <Provider store={store}>
     <Stack screenOptions={{ animation: 'slide_from_bottom' }}>
       <Stack.Screen name="index" options={{ headerShown: false }} />
       <Stack.Screen name="(auth)" options={{ headerShown: false }} />
@@ -46,6 +50,7 @@ const RootLayout = () => {
         options={{ headerShown: false, animation: 'slide_from_bottom' }}
       />
     </Stack>
+    </Provider>
   );
 };
 
