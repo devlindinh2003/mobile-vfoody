@@ -76,8 +76,9 @@ const Index = () => {
         <Text className="font-hnow65medium text-xl text-primary">Bán chạy nhất</Text>
       </View>
       <View className="flex-1 ">
-        <View className="flex-row  pl-7 mt-2  ">
+        <View className="flex-row mt-2  ">
           <FlatList
+            contentContainerStyle={{paddingLeft: 28}}
             horizontal
             data={data3}
             showsHorizontalScrollIndicator={false}
@@ -89,14 +90,16 @@ const Index = () => {
         <Text className="font-hnow65medium text-xl text-primary">Đặt lại quán quen</Text>
       </View>
       <View className="flex-1 ">
-          <View className="flex-row  pl-7 mt-2  ">
-            <FlatList
-              horizontal
-              data={Data2}
-              showsHorizontalScrollIndicator={false}
-              renderItem={({ item }) => <ItemShopRegulerInHome item={item} />}
-            />
-          </View>
+        <View className="flex-row mt-2  ">
+          <FlatList
+          
+            contentContainerStyle={{paddingLeft: 28}}
+            horizontal
+            data={Data2}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item }) => <ItemShopRegulerInHome item={item} />}
+          />
+        </View>
       </View>
       <View className="pl-7">
         <Text className="font-hnow65medium text-xl text-primary">Đặt hàng ngay!!!</Text>

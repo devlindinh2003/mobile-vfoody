@@ -4,11 +4,11 @@ import { Avatar } from 'react-native-paper';
 import { Colors } from '../../constant';
 const styles = StyleSheet.create({
   shadow: {
-    shadowOffset: { width: 5, height: 8 },
+    shadowOffset: { width: 2, height: 4 },
     shadowColor: Colors.shadow[300],
 
-    shadowOpacity: 0.1,
-    elevation: 6,
+    shadowOpacity: 0.3,
+    elevation: 10,
     // background color must be set
   },
   shadowSelected: {
@@ -28,7 +28,7 @@ const ItemBestSellerInHome = ({ item }) => {
       key={item.id}
       className={`flex justify-start items-center bg-transparent w-[120] rounded-2xl  mr-5 mb-10`}
     >
-      <View className="w-full h-[120] bg-black-100 flex-1 overflow-hidden rounded-2xl ">
+      <View className="w-full h-[120] bg-black-100 flex-1 rounded-2xl " style={styles.shadow}>
         <View className="absolute top-2 left-2 bg-white flex-row rounded-full p-1.5 z-[1]">
           <Text className="font-hnow64regular text-xs text-gray-500" style={{ fontSize: 10 }}>
             12 đã bán
@@ -45,7 +45,7 @@ const ItemBestSellerInHome = ({ item }) => {
             uri: 'https://th.bing.com/th/id/OIP.PMqWalG0o9orq9s5HezHpQAAAA?rs=1&pid=ImgDetMain',
           }}
           resizeMode="cover"
-          className="w-full h-full z-[0]"
+          className="w-full h-full z-[0] rounded-lg"
         />
       </View>
       <View className="pt-1 items-start w-full gap-1">
