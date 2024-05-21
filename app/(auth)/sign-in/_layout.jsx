@@ -14,7 +14,7 @@ const AuthenLayout = () => {
           source={Images.LogoCoverDark}
         />
         <HeaderInAuth activePage={"signIn"} />
-        <Slot/>
+        <Slot screenOptions={{animation: "flip"}}/>
       </View>
     </ScrollView>
   );

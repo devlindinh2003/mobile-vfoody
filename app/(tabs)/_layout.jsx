@@ -53,7 +53,11 @@ const TabLayout = () => {
       >
         <Tabs.Screen
           name="home"
+          screenOptions={{
+            animation: "flip"
+          }}
           options={{
+            animation: "slide_from_bottom",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon

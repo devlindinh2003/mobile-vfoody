@@ -11,6 +11,9 @@ export default {
   commonBtnText: '#FFFFFF',
   btnBackground: '#FFFFFF',
   btnText: '#DF4830',
+  star: {
+    defaut: "#cad800"
+  },
   shadow: {
     DEFAULT: '#df4730ff',
     100: '#df473071',

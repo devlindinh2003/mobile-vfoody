@@ -1,12 +1,12 @@
+import { router } from 'expo-router';
 import { SlidersHorizontal } from 'lucide-react-native';
 import * as React from 'react';
 import { Animated, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Avatar, Button, IconButton, TouchableRipple } from 'react-native-paper';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors } from '../../constant';
 
-const Header_Max_Height = 160;
-const Header_Min_Height = 0;
+const Header_Max_Height = 90;
+const Header_Min_Height = 20;
 
 export default function DynamicHeader({ animHeaderValue }) {
   const animateHeaderBackgroundColor = animHeaderValue.interpolate({
@@ -33,9 +33,10 @@ export default function DynamicHeader({ animHeaderValue }) {
     //   }
     //
     // ]}
+    className="pb-2"
     >
       <Animated.View
-        className="gap-5 flex-col"
+        className="gap-3 flex-col"
         style={[
           {
             height: animateHeaderHeight,
@@ -76,22 +77,18 @@ export default function DynamicHeader({ animHeaderValue }) {
             }}
           />
         </View>
-        <View className="pl-7">
-          <Text style={{ fontSize: 30 }} className=" font-hnow65medium text-black">
-            Bạn muốn ăn gì...
-          </Text>
-        </View>
       </Animated.View>
 
-      <SafeAreaView className="flex-row items-center">
+      <View className="flex-row items-center pb-0 ">
         <View
           className="ml-7  flex-row justify-start items-center border-solid border-3 border-primary rounded-xl w-[75%]"
           style={{
             borderWidth: 1,
           }}
         >
-          <IconButton icon="magnify" iconColor={Colors.primaryBackgroundColor} onPress={() => {}} />
+          <IconButton icon="magnify" iconColor={Colors.primaryBackgroundColor} onPress={() => router.push("/home/search-list")} />
           <TextInput
+            onFocus={()=> router.push("/home/search")}
             className="flex-1 font-hnow63book"
             placeholder="Tìm kiếm món ăn hay shop house?"
           />
@@ -104,7 +101,7 @@ export default function DynamicHeader({ animHeaderValue }) {
         >
           <SlidersHorizontal size={32} color={Colors.primaryBackgroundColor} />
         </TouchableRipple>
-      </SafeAreaView>
+      </View>
     </Animated.View>
   );
 }
