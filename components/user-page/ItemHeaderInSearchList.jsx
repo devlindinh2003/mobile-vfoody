@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import { Chip } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Colors } from '../../constant';
@@ -25,10 +25,16 @@ const styles = StyleSheet.create({
 });
 
 const ItemHeaderInSearchList = ({ item }) => {
+  const { width, height } = Dimensions.get('window');
   console.log(item);
+  const widthItem = parseInt((width * 26) / 100);
   return (
     <View className="flex-row pl-7 mb-7 gap-2">
-      <View className="h-[100] w-[100] bg-white rounded-lg" style={styles.shadow}>
+      <View className=" bg-white rounded-lg" style={{
+        ...styles.shadow,
+        height: widthItem,
+        width: widthItem,
+      }} >
         <Image className="h-full w-full rounded-lg" source={{ uri: item.banner }} />
       </View>
       <View className="justify-between">

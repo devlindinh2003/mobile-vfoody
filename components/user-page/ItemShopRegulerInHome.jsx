@@ -1,6 +1,6 @@
 import { AntDesign } from '@expo/vector-icons';
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import { Avatar } from 'react-native-paper';
 import { Colors } from '../../constant';
 const styles = StyleSheet.create({
@@ -23,15 +23,27 @@ const styles = StyleSheet.create({
   },
 });
 
-
-const ItemShopRegulerInHome = ({item}) => {
+const ItemShopRegulerInHome = ({ item }) => {
+  const { width, height } = Dimensions.get('window');
+  console.log(item);
+  const widthItem = parseInt((width * 65) / 100);
+  const heightImage = parseInt((widthItem * 65) / 100);
+  console.log(widthItem);
   return (
     <View
       key={item.id}
-      className={`flex justify-start items-center bg-white w-[270] rounded-2xl  mr-5 mb-10`}
-      style={styles.shadow}
+      className={`flex justify-start items-center bg-white rounded-2xl  mr-5 mb-10`}
+      style={{
+        ...styles.shadow,
+        width: widthItem,
+      }}
     >
-      <View className="w-full h-[170] bg-black-100 flex-1 overflow-hidden rounded-t-2xl ">
+      <View
+        className="w-full bg-black-100 flex-1 overflow-hidden rounded-t-2xl "
+        style={{
+          height: heightImage,
+        }}
+      >
         <View className="absolute top-2 left-2 bg-white flex-row rounded-full p-1.5 z-[1]">
           <Text className="font-hnow64regular text-xs ">4.5</Text>
           <AntDesign name="star" size={14} color={Colors.star.defaut} />
