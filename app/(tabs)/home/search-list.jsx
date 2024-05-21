@@ -1,27 +1,64 @@
 import React from 'react';
-import { FlatList, SectionList, View } from 'react-native';
+import { FlatList, SectionList, StyleSheet, View } from 'react-native';
+import FilterBarinSearchList from '../../../components/user-page/FilterBarinSearchList';
 import ItemBodyInSearchList from '../../../components/user-page/ItemBodyInSearchList';
 import ItemHeaderInSearchList from '../../../components/user-page/ItemHeaderInSearchList';
-
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
+    padding: 8,
+    zIndex: -1,
+  },
+});
 const SearchList = () => {
   return (
-    <View className="flex-1 mt-5">
+    <View className="flex-1 mt-3">
+      <FilterBarinSearchList />
       <SectionList
+        CellRendererComponent={({ children, index, style, ...props }) => {
+          const cellStyle = [
+            style,
+            {
+              zIndex: -1,
+              elevation: -1,
+            },
+          ];
+
+          return (
+            <View style={cellStyle} index={index} {...props}>
+              {children}
+            </View>
+          );
+        }}
+        ListHeaderComponentStyle={{ zIndex: 10 }}
         className="flex-1"
-        contentContainerStyle={{}}
+        contentContainerStyle={{ zIndex: 1 }}
         keyExtractor={(item, index) => index}
         sections={data}
         scrollEnabled={false}
+        SectionSeparatorComponent={(section, index) => {
+          console.log(index, '123123123123');
+          return (
+            <View
+              style={{
+                height: 4,
+                borderRadius: 231,
+                backgroundColor: '#9e9a9a59',
+              }}
+            />
+          );
+        }}
         stickySectionHeadersEnabled={false}
         renderSectionHeader={({ section: { title, data } }) => (
           <>
-            <View className="flex-1 mb-10" style={{
-
-            }}>
+            <View className="flex-1 my-4" style={{}}>
               <ItemHeaderInSearchList item={title} />
 
               <FlatList
                 className="px-7 flex-1 w-full"
+                contentContainerStyle={{ paddingRight: 56 }}
                 data={data}
                 horizontal
                 showsHorizontalScrollIndicator={false}

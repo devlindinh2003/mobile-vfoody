@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   container: {
     margin: 0,
     flex: 1,
-    paddingBottom: 0
+    paddingBottom: 0,
   },
   scrollText: {
     fontSize: 19,
@@ -19,16 +19,17 @@ const styles = StyleSheet.create({
 const HomePage = () => {
   let scrollOffsetY = useRef(new Animated.Value(0)).current;
   return (
-    <SafeAreaView style={styles.container} className="bg-white" edges={["top", "right", "left"]}>
+    <SafeAreaView style={styles.container} className="bg-white" edges={['top', 'right', 'left']}>
       <DynamicHeader animHeaderValue={scrollOffsetY} />
       <ScrollView
         scrollEventThrottle={16}
         showsVerticalScrollIndicator={false}
+        nestedScrollEnabled={true}
         onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: scrollOffsetY } } }], {
           useNativeDriver: false,
         })}
       >
-          <Slot />
+        <Slot />
       </ScrollView>
     </SafeAreaView>
   );
