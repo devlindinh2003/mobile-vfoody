@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import { Avatar } from 'react-native-paper';
 import { Colors } from '../../constant';
 const styles = StyleSheet.create({
@@ -23,12 +23,21 @@ const styles = StyleSheet.create({
 });
 
 const ItemBestSellerInHome = ({ item }) => {
+  const { width, height } = Dimensions.get('window');
+  console.log(item);
+  const widthItem = parseInt((width * 23) / 100);
   return (
     <View
       key={item.id}
-      className={`flex justify-start items-center bg-transparent w-[120] rounded-2xl  mr-5 mb-10`}
+      className={`flex justify-start items-center bg-transparent rounded-2xl  mr-5 mb-10`}
+      style={{
+        width: widthItem,
+      }}
     >
-      <View className="w-full h-[120] bg-black-100 flex-1 rounded-2xl " style={styles.shadow}>
+      <View className="w-full bg-black-100 flex-1 rounded-2xl " style={{
+        ...styles.shadow,
+        height: widthItem
+      }}>
         <View className="absolute top-2 left-2 bg-white flex-row rounded-full p-1.5 z-[1]">
           <Text className="font-hnow64regular text-xs text-gray-500" style={{ fontSize: 10 }}>
             12 đã bán
