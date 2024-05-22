@@ -38,6 +38,8 @@ const TabLayout = () => {
     <>
       <Tabs
         initialRouteName="homes"
+        animation=""
+        
         screenOptions={{
           tabBarActiveTintColor: Colors.commonBtnText,
           tabBarInactiveTintColor: Colors.tertiaryTextColor,
@@ -56,8 +58,8 @@ const TabLayout = () => {
           screenOptions={{
             animation: "flip"
           }}
+          
           options={{
-            animation: "slide_from_bottom",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
@@ -71,7 +73,10 @@ const TabLayout = () => {
         />
         <Tabs.Screen
           name="order"
+
           options={{
+
+            freezeOnBlur: true,
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
@@ -114,6 +119,7 @@ const TabLayout = () => {
         />
         <Tabs.Screen
           name="like"
+          
           options={{
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
@@ -127,6 +133,7 @@ const TabLayout = () => {
           }}
         />
       </Tabs>
+    
     </>
   );
 };

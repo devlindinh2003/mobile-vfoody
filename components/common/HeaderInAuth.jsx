@@ -26,7 +26,7 @@ const HeaderInAuth = ({ }) => {
               width: '90%',
             }}
             labelStyle={{
-              fontFamily: 'Poppins-SemiBold',
+              fontFamily: 'HeadingNow-64Regular',
               fontSize: 16,
               lineHeight: 18,
             }}
@@ -51,7 +51,7 @@ const HeaderInAuth = ({ }) => {
               width: '90%',
             }}
             labelStyle={{
-              fontFamily: 'Poppins-SemiBold',
+              fontFamily: 'HeadingNow-64Regular',
               fontSize: 16,
               lineHeight: 18,
             }}
