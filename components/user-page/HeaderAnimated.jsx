@@ -94,7 +94,7 @@ export default function DynamicHeader({ animHeaderValue }) {
           />
         </View>
         <TouchableRipple
-          className="p-2 ml-2 rounded-md bg-white"
+          className="p-2 ml-2 rounded-full "
           style={styles.shadow}
           onPress={() => console.log('Pressed')}
           rippleColor="rgba(0, 0, 0, .32)"

@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 const ItemBestSellerInHome = ({ item }) => {
   const { width, height } = Dimensions.get('window');
   console.log(item);
-  const widthItem = parseInt((width * 23) / 100);
+  const widthItem = parseInt((width * 30) / 100);
   return (
     <View
       key={item.id}

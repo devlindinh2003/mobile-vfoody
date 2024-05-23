@@ -33,6 +33,7 @@ const SearchPage = () => {
             <View className="flex-row justify-start  ml-7 ">
               {dataRecentSearch.map((item, index) => (
                 <Chip
+                key={item.id}
                   style={{
                     marginRight: 8,
                     backgroundColor: Colors.primaryBackgroundColor,

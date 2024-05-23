@@ -1,12 +1,12 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-const CartPage = () => {
+const OauthredirectLayout = () => {
   return (
     <View>
-      <Text>CartPage</Text>
+      <Text>OauthredirectLayout</Text>
     </View>
   )
 }
 
-export default CartPage
+export default OauthredirectLayout
