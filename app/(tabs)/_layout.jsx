@@ -65,7 +65,7 @@ const TabLayout = () => {
               <TabIcon
                 color={color}
                 name="home"
-                iconName={<Ionicons name="storefront" size={20} color={focused ? Colors.activeTabColor : Colors.commonBtnText} />}
+                iconName={<Ionicons name="storefront" size={22} color={focused ? Colors.activeTabColor : Colors.commonBtnText} />}
                 focused={focused}
               />
             ),
@@ -73,16 +73,14 @@ const TabLayout = () => {
         />
         <Tabs.Screen
           name="order"
-
           options={{
-
             freezeOnBlur: true,
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
               <TabIcon
                 color={color}
                 name="order"
-                iconName={<Ionicons name="newspaper" size={20} color={focused ? Colors.activeTabColor : Colors.commonBtnText} />}
+                iconName={<Ionicons name="newspaper" size={22} color={focused ? Colors.activeTabColor : Colors.commonBtnText} />}
                 focused={focused}
               />
             ),
@@ -97,7 +95,7 @@ const TabLayout = () => {
               <TabIcon
                 color={color}
                 name="cart"
-                iconName={<MaterialCommunityIcons name="shopping" size={20} color={focused ? Colors.activeTabColor : Colors.commonBtnText} />}
+                iconName={<MaterialCommunityIcons name="shopping" size={22} color={focused ? Colors.activeTabColor : Colors.commonBtnText} />}
                 focused={focused}
               />
             ),
@@ -111,7 +109,7 @@ const TabLayout = () => {
               <TabIcon
                 color={color}
                 name="notify"
-                iconName={<Ionicons name="heart" size={20} color={focused ? Colors.activeTabColor : Colors.commonBtnText}/>}
+                iconName={<Ionicons name="heart" size={22} color={focused ? Colors.activeTabColor : Colors.commonBtnText}/>}
                 focused={focused}
               />
             ),
@@ -126,7 +124,7 @@ const TabLayout = () => {
               <TabIcon
                 color={color}
                 name="like"
-                iconName={<Octicons name="bell-fill" size={20} color={focused ? Colors.activeTabColor : Colors.commonBtnText} />}
+                iconName={<Octicons name="bell-fill" size={22} color={focused ? Colors.activeTabColor : Colors.commonBtnText} />}
                 focused={focused}
               />
             ),

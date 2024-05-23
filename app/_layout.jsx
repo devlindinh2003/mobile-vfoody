@@ -49,7 +49,10 @@ const RootLayout = () => {
         name="(tabs)"
         options={{ headerShown: false, animation: 'slide_from_bottom' }}
       />
-      
+      <Stack.Screen
+        name="oauthredirect"
+        options={{ headerShown: false, animation:'slide_from_bottom' }}
+      /> 
     </Stack>
     </Provider>
   );
